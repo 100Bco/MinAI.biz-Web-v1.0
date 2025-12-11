@@ -56,7 +56,7 @@ export const NICHES: Niche[] = [
 export const PRICING: PricingTier[] = [
   {
     name: "The Growth System",
-    price: "$XXX",
+    price: "$xxx",
     period: "/ Month",
     description: "Best For: Solo Operators.",
     features: ["CRM", "Missed-Call-Text-Back", "Review Automation", "Calendar Booking"],
