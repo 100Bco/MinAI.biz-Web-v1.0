@@ -91,16 +91,9 @@ const Hero: React.FC = () => {
   const hookOpacity = useTransform(scrollYProgress, [0, 0.2], [1, 0]);
   const hookScale = useTransform(scrollYProgress, [0, 0.2], [1, 0.9]);
   const hookY = useTransform(scrollYProgress, [0, 0.2], [0, -50]);
-  
-  // Dashboard Animations - Using smoothProgress instead of scrollYProgress
-  // Adding Scale and Rotation for a "Modern 3D" feel
-  const dashboardY = useTransform(smoothProgress, [0.15, 0.45], ["100vh", "0vh"]);
-  const dashboardScale = useTransform(smoothProgress, [0.15, 0.45], [0.85, 1]);
-  const dashboardRotateX = useTransform(smoothProgress, [0.15, 0.45], [15, 0]); // Starts tilted back
-  const dashboardOpacity = useTransform(smoothProgress, [0.15, 0.3], [0, 1]);
 
-  const contentOpacity = useTransform(smoothProgress, [0.5, 0.7], [0, 1]);
-  const contentY = useTransform(smoothProgress, [0.5, 0.7], [50, 0]);
+  // Phase 2 - Simple fade in (Dashboard + CTA show together)
+  const phase2Opacity = useTransform(scrollYProgress, [0.2, 0.3], [0, 1]);
 
   const chaosOpacity = useTransform(scrollYProgress, [0, 0.15], [1, 0]);
 
@@ -150,16 +143,12 @@ const Hero: React.FC = () => {
              </motion.div>
         </motion.div>
 
-        {/* PHASE 2: THE REVEAL (DASHBOARD + CTA) */}
-        {/* Added perspective to parent (in className above) and rotateX here for 3D effect */}
-        <motion.div 
-           style={{ 
-             y: dashboardY, 
-             opacity: dashboardOpacity,
-             scale: dashboardScale,
-             rotateX: dashboardRotateX
+        {/* PHASE 2: THE REVEAL (DASHBOARD + CTA) - Show together with simple fade */}
+        <motion.div
+           style={{
+             opacity: phase2Opacity
            }}
-           className="relative z-20 flex flex-col items-center justify-center w-full max-w-6xl px-4 pt-12 md:pt-20 will-change-transform"
+           className="relative z-20 flex flex-col items-center justify-center w-full max-w-6xl px-4 pt-12 md:pt-20"
         >
             {/* Dashboard Card */}
             <div className="w-full bg-white/80 backdrop-blur-xl rounded-2xl shadow-2xl shadow-blue-900/20 border border-white/50 overflow-hidden ring-1 ring-slate-900/5 transform-gpu">
@@ -217,18 +206,15 @@ const Hero: React.FC = () => {
                </div>
             </div>
 
-            {/* Bottom Text & CTAs */}
-            <motion.div 
-               style={{ opacity: contentOpacity, y: contentY }}
-               className="mt-12 md:mt-24 pb-48 md:pb-24 text-center max-w-3xl mx-auto"
-            >
+            {/* Bottom Text & CTAs - Shows with Dashboard (no separate animation) */}
+            <div className="mt-12 md:mt-24 pb-48 md:pb-24 text-center max-w-3xl mx-auto">
                <h2 className="text-3xl md:text-5xl font-bold text-slate-900 mb-4 leading-tight">
                  So Why Are You Always Working?
                </h2>
                <p className="text-lg text-slate-600 mb-8 leading-relaxed">
                  We install the proven growth infrastructure that allows you to <span className="font-bold text-slate-900 bg-blue-50 px-2 py-0.5 rounded border border-blue-100">3x your revenue</span> while saving you <span className="font-bold text-slate-900 bg-green-50 px-2 py-0.5 rounded border border-green-100">5 hours+ per week</span> of headache.
                </p>
-               
+
                <div className="flex flex-row items-center justify-center gap-3 w-full md:w-auto">
                  <a
                    href="https://app.minai.biz/"
@@ -242,7 +228,7 @@ const Hero: React.FC = () => {
                    Watch The Demo
                  </button>
                </div>
-            </motion.div>
+            </div>
         </motion.div>
       </div>
     </section>
