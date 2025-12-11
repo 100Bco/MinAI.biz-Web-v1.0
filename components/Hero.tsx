@@ -88,17 +88,17 @@ const Hero: React.FC = () => {
   });
 
   // Animation Sequence
-  const hookOpacity = useTransform(scrollYProgress, [0, 0.2], [1, 0]);
-  const hookScale = useTransform(scrollYProgress, [0, 0.2], [1, 0.9]);
-  const hookY = useTransform(scrollYProgress, [0, 0.2], [0, -50]);
+  const hookOpacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
+  const hookScale = useTransform(scrollYProgress, [0, 0.5], [1, 0.9]);
+  const hookY = useTransform(scrollYProgress, [0, 0.5], [0, -50]);
 
   // Phase 2 - Simple fade in (Dashboard + CTA show together)
-  const phase2Opacity = useTransform(scrollYProgress, [0.2, 0.3], [0, 1]);
+  const phase2Opacity = useTransform(scrollYProgress, [0.5, 0.7], [0, 1]);
 
-  const chaosOpacity = useTransform(scrollYProgress, [0, 0.15], [1, 0]);
+  const chaosOpacity = useTransform(scrollYProgress, [0, 0.4], [1, 0]);
 
   return (
-    <section ref={containerRef} className="relative h-[550vh] bg-slate-50">
+    <section ref={containerRef} className="relative h-[200vh] bg-slate-50">
       <div className="sticky top-0 h-screen overflow-hidden flex flex-col items-center justify-center perspective-1000">
         
         {/* Background Elements */}
