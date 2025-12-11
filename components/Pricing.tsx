@@ -39,7 +39,7 @@ const Pricing: React.FC = () => {
             Cost of an Employee: <span className="line-through text-slate-400 decoration-red-500/50">$4,000/mo</span>
           </h2>
           <h2 className="text-4xl md:text-6xl font-bold text-blue-600 tracking-tight">
-            Cost of MinAI: $497
+            Cost of MinAI: $XXX
           </h2>
           <p className="mt-4 text-slate-500">One simple subscription. No hidden fees. Cancel anytime.</p>
         </motion.div>
