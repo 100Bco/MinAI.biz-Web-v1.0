@@ -62,16 +62,16 @@ const Navbar: React.FC = () => {
       >
         <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
           {/* Logo Area */}
-          <a 
-            href="#" 
+          <a
+            href="#"
             onClick={scrollToTop}
             className="flex items-center gap-2 group cursor-pointer"
           >
-            <div className="relative h-10 flex items-center font-bold text-2xl tracking-tighter text-slate-900">
-              <span className="text-blue-600 transition-transform duration-300 group-hover:-translate-y-0.5">Min</span>
-              <span className="transition-transform duration-300 group-hover:translate-y-0.5">AI</span>
-              <div className="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-600 transition-all duration-300 group-hover:w-full"></div>
-            </div>
+            <img
+              src="/logo.svg"
+              alt="MinAI Logo"
+              className="h-10 transition-transform duration-300 group-hover:scale-105"
+            />
           </a>
 
           {/* Desktop Nav */}

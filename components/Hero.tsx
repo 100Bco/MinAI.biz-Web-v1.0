@@ -230,9 +230,14 @@ const Hero: React.FC = () => {
                </p>
                
                <div className="flex flex-row items-center justify-center gap-3 w-full md:w-auto">
-                 <button className="flex-1 md:flex-none bg-blue-600 text-white px-4 py-3 md:px-8 md:py-4 rounded-xl font-bold text-sm md:text-lg hover:bg-blue-700 transition-all shadow-lg shadow-blue-600/30 hover:shadow-blue-600/40 flex items-center justify-center gap-2 whitespace-nowrap">
+                 <a
+                   href="https://app.minai.biz/"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   className="flex-1 md:flex-none bg-blue-600 text-white px-4 py-3 md:px-8 md:py-4 rounded-xl font-bold text-sm md:text-lg hover:bg-blue-700 transition-all shadow-lg shadow-blue-600/30 hover:shadow-blue-600/40 flex items-center justify-center gap-2 whitespace-nowrap"
+                 >
                    See The System
-                 </button>
+                 </a>
                  <button className="flex-1 md:flex-none bg-white text-slate-700 border border-slate-200 px-4 py-3 md:px-8 md:py-4 rounded-xl font-bold text-sm md:text-lg hover:bg-slate-50 transition-all flex items-center justify-center gap-2 whitespace-nowrap">
                    Watch The Demo
                  </button>

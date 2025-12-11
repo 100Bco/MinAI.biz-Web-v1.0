@@ -25,12 +25,16 @@ const Footer: React.FC = () => {
         </motion.div>
 
         <div className="border-t border-slate-800 pt-10 flex flex-col md:flex-row items-center justify-between gap-6">
-          <a 
-            href="#" 
+          <a
+            href="#"
             onClick={scrollToTop}
-            className="flex items-center gap-2 font-bold text-2xl tracking-tighter hover:opacity-80 transition-opacity cursor-pointer"
+            className="flex items-center gap-2 hover:opacity-80 transition-opacity cursor-pointer"
           >
-             <span className="text-blue-600">Min</span>AI
+            <img
+              src="/logo.svg"
+              alt="MinAI Logo"
+              className="h-10"
+            />
           </a>
           <div className="text-slate-500 text-sm">
             Copyright © 2025 MinAI. Scale Systems.
